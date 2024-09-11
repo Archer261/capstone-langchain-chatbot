@@ -93,8 +93,8 @@ def answer_as_chatbot(message):
         cohere_api_key = os.getenv("COHERE_API_KEY")
         if not cohere_api_key:
             raise ValueError("COHERE_API_KEY environment variable not set")
-        
-        llm = init_cohere(cohere_api_key, temperature=0.7)
+    
+        llm = Cohere(cohere_api_key=cohere_api_key, temperature=0.7)
 
         template = """You are a helpful AI assistant. Your goal is to provide informative and engaging responses to user queries.
 
